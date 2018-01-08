@@ -1,0 +1,47 @@
+{
+    "name": "public/mailjet-subscribe",
+    "description": "Simple Craft plugin for subscribing to a Mailjet list.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "minimum-stability": "dev",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "mailjet"
+    ],
+    "authors": [
+        {
+            "name": "Stijn Swaanen",
+            "homepage": "https://github.com/stijnswaanen"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1",
+        "mailjet/mailjet-apiv3-php": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "publiq\\mailjetsubscribe\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Mailjet Subscribe",
+        "handle": "mailjet-subscribe",
+        "schemaVersion": "1.0.0",
+        "developer": "Stijn Swaanen",
+        "developerUrl": "https://github.com/stijnswaanen",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "components": {
+        },
+        "class": "publiq\\mailjetsubscribe\\MailjetSubscribe"
+    }
+}
