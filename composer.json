@@ -1,5 +1,5 @@
 {
-    "name": "public/mailjet-subscribe",
+    "name": "publiq/mailjet-subscribe",
     "description": "Simple Craft plugin for subscribing to a Mailjet list.",
     "type": "craft-plugin",
     "version": "1.0.0",
