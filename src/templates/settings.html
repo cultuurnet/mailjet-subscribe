@@ -4,12 +4,19 @@
     first: true,
     label: "Api Key Public",
     name: 'apiKeyPublic',
-    value: settings.apiKey
+    value: settings.apiKeyPublic
 }) }}
 
 {{ forms.textField({
     first: true,
     label: "Api Key Private",
     name: 'apiKeyPrivate',
-    value: settings.apiKey
+    value: settings.apiKeyPrivate
+}) }}
+
+{{ forms.textField({
+    first: true,
+    label: "List ID",
+    name: 'listId',
+    value: settings.listId
 }) }}

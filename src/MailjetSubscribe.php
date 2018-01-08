@@ -8,7 +8,10 @@
 
 namespace publiq\mailjetsubscribe;
 
-use Craft;
+use publiq\mailjetsubscribe\models\Settings;
+use publiq\mailjetsubscribe\services\MailjetSubscribeService as SubscribeService;
+use publiq\mailjetsubscribe\variables\MailjetSubscribeVariable;
+
 use craft\base\Plugin;
 use craft\web\twig\variables\CraftVariable;
 
@@ -17,6 +20,7 @@ use yii\base\Event;
 /**
  * Class MailjetSubscribe
  *
+ * @property SubscribeService $mailjetSubscribe
  */
 class MailjetSubscribe extends Plugin
 {
@@ -41,9 +45,9 @@ class MailjetSubscribe extends Plugin
         parent::init();
         self::$plugin = $this;
         
-        //$this->set('mailjetSubscribe', '\publiq\mailjetsubscribe\services\MailjetSubscribeService');
+        $this->set('mailjetSubscribe', '\publiq\mailjetsubscribe\services\MailjetSubscribeService');
         
-        /*Event::on(
+        Event::on(
             CraftVariable::class,
             CraftVariable::EVENT_INIT,
             function (Event $event) {
@@ -51,7 +55,7 @@ class MailjetSubscribe extends Plugin
                 $variable = $event->sender;
                 $variable->set('mailjetSubscribe', MailjetSubscribeVariable::class);
             }
-        );*/
+        );
         
     }
     
@@ -65,7 +69,7 @@ class MailjetSubscribe extends Plugin
 
     protected function settingsHtml()
     {
-        return \Craft::$app->getView()->renderTemplate('structured-data/settings', [
+        return \Craft::$app->getView()->renderTemplate('mailjet-subscribe/settings', [
             'settings' => $this->getSettings()
         ]);
     }
