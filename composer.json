@@ -15,6 +15,10 @@
         {
             "name": "Stijn Swaanen",
             "homepage": "https://github.com/stijnswaanen"
+        },
+        {
+            "name": "Jan Henckens",
+            "homepage": "https://github.com/janhenckens"
         }
     ],
     "require": {
