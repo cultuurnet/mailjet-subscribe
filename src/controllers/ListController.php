@@ -59,14 +59,14 @@ class ListController extends Controller
         }*/
 
         // if a redirect variable was passed, do redirect
-        /*if ($redirect !== '' && $result['success']) {
-            return $this->redirectToPostedUrl(array('mailchimpSubscribe' => $result));
-        }*/
-
-        // set route variables and return
-        Craft::$app->getUrlManager()->setRouteParams([
-            'variables' => ['mailjetSubscribe' => $result]
-        ]);
+        if ($redirect !== '' && $result['success']) {
+            return $this->redirectToPostedUrl(array('mailjetSubscribe' => $result));
+        } else {
+            // set route variables and return
+            Craft::$app->getUrlManager()->setRouteParams([
+                'variables' => ['mailjetSubscribe' => $result]
+            ]);
+        }
 
         return null;
     }
