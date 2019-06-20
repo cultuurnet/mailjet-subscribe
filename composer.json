@@ -2,7 +2,7 @@
     "name": "publiq/mailjet-subscribe",
     "description": "Simple Craft plugin for subscribing to a Mailjet list.",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "minimum-stability": "dev",
     "keywords": [
         "craft",
