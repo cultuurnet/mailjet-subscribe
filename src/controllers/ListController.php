@@ -46,18 +46,15 @@ class ListController extends Controller
         $this->requirePostRequest();
         $request = Craft::$app->getRequest();
 
+        $contactProperties = $request->getBodyParam('fields');
+
         // get post variables
         $email = $request->getParam('email', '');
         $formListId = Plugin::getInstance()->getSettings()->listId;
 
         // call service method
-        $result = Plugin::$plugin->mailjetSubscribe->subscribe($email, $formListId);
-
-        // if this was an ajax request, return json
-        /*if ($request->getAcceptsJson()) {
-            return $this->asJson($result);
-        }*/
-
+        $result = Plugin::$plugin->mailjetSubscribe->subscribe($email, $formListId, $contactProperties);
+        
         // if a redirect variable was passed, do redirect
         if ($redirect !== '' && $result['success']) {
             return $this->redirectToPostedUrl(array('mailjetSubscribe' => $result));

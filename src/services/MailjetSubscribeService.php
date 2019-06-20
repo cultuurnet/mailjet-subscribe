@@ -42,7 +42,7 @@ class MailjetSubscribeService extends Component
         $this->mailJet = new Client($this->settings->apiKeyPublic, $this->settings->apiKeyPrivate);
     }
 
-    public function subscribe($emailAddress, $formListId)
+    public function subscribe($emailAddress, $formListId, $contentProperties = null)
     {
         $this->initMailjetApi();
 
@@ -57,6 +57,24 @@ class MailjetSubscribeService extends Component
             Resources::$ContactslistManagecontact,
             ['id' => $formListId, 'body' => $body]
         );
+
+        if ($contentProperties) {
+            $contactID = $response->getBody()['Data'][0]['ContactID'];
+
+            $properties = [];
+            foreach ($contentProperties as $prop => $value) {
+                $properties[] = [
+                    'Name' => $prop,
+                    'Value' => $value
+                ];
+            }
+
+            $$response = $this->mailJet->put(Resources::$Contactdata, array(
+                'id' => $contactID,
+                'body' => ['Data' => $properties]
+            ));
+
+        }
 
         if ($response->success())
             return [
