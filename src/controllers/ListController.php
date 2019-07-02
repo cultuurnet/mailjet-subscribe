@@ -45,6 +45,8 @@ class ListController extends Controller
     {
         $this->requirePostRequest();
         $request = Craft::$app->getRequest();
+        $redirect = Craft::$app->getRequest()->getBodyParam('redirect');
+        $redirect = Craft::$app->security->validateData($redirect);
 
         $contactProperties = $request->getBodyParam('fields');
 
