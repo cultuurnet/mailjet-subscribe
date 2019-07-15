@@ -69,7 +69,7 @@ class MailjetSubscribeService extends Component
                 ];
             }
 
-            $$response = $this->mailJet->put(Resources::$Contactdata, array(
+            $response = $this->mailJet->put(Resources::$Contactdata, array(
                 'id' => $contactID,
                 'body' => ['Data' => $properties]
             ));
