@@ -67,7 +67,7 @@ class MailjetSubscribe extends Plugin
         return new Settings();
     }
 
-    protected function settingsHtml(): mixed
+    protected function settingsHtml(): ?string
     {
         return \Craft::$app->getView()->renderTemplate('mailjet-subscribe/settings', [
             'settings' => $this->getSettings()
