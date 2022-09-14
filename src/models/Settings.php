@@ -6,11 +6,11 @@ use craft\base\Model;
 
 class Settings extends Model
 {
-    public $apiKeyPublic = '';
-    public $apiKeyPrivate = '';
-    public $listId = '';
+    public string $apiKeyPublic = '';
+    public string $apiKeyPrivate = '';
+    public string $listId = '';
 
-    public function rules()
+    public function rules(): array
     {
         return [
             [['apiKeyPublic', 'apiKeyPrivate', 'listId'], 'required'],

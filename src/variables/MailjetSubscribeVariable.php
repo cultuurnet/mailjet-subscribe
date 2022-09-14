@@ -23,7 +23,7 @@ class MailjetSubscribeVariable
      *
      * @return array|mixed
      */
-    public function checkIfSubscribed($email, $listId = null)
+    public function checkIfSubscribed($email, $listId = null): mixed
     {
         return Plugin::$plugin->mailjetSubscribe->checkIfSubscribed($email, $listId);
     }

@@ -2,7 +2,7 @@
     "name": "publiq/mailjet-subscribe",
     "description": "Simple Craft plugin for subscribing to a Mailjet list.",
     "type": "craft-plugin",
-    "version": "1.0.3",
+    "version": "2.0.0",
     "minimum-stability": "dev",
     "keywords": [
         "craft",
@@ -22,7 +22,7 @@
         }
     ],
     "require": {
-        "craftcms/cms": "^3.0.0-RC1",
+        "craftcms/cms": "^4.0.0-RC1",
         "mailjet/mailjet-apiv3-php": "^1.4.0"
     },
     "repositories": [

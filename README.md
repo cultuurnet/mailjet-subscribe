@@ -1,10 +1,10 @@
-# Mailjet Subscribe for Craft CMS 3.x
+# Mailjet Subscribe for Craft CMS 4.x
 
 Simple Craft plugin for subscribing to a Mailjet list.
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0 or later.
+This plugin requires Craft CMS 4.0.0 or later.
 
 ## Settings
 

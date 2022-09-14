@@ -27,7 +27,7 @@ class MailjetSubscribe extends Plugin
     // Static Properties
     // =========================================================================
 
-    public $hasCpSettings = true;
+    public bool $hasCpSettings = true;
 
     /**
      * @var MailjetSubscribe
@@ -62,12 +62,12 @@ class MailjetSubscribe extends Plugin
     /**
      * @inheritdoc
      */
-    protected function createSettingsModel()
+    protected function createSettingsModel(): Settings
     {
         return new Settings();
     }
 
-    protected function settingsHtml()
+    protected function settingsHtml(): mixed
     {
         return \Craft::$app->getView()->renderTemplate('mailjet-subscribe/settings', [
             'settings' => $this->getSettings()

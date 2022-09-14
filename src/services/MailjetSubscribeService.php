@@ -10,11 +10,11 @@ use Mailjet\Resources;
 
 class MailjetSubscribeService extends Component
 {
-    protected $mailJet;
+    protected mixed $mailJet;
 
-    protected $settings;
+    protected mixed $settings;
 
-    protected function initMailjetApi()
+    protected function initMailjetApi(): array
     {
         $this->settings = Plugin::getInstance()->getSettings();
 
@@ -42,7 +42,7 @@ class MailjetSubscribeService extends Component
         $this->mailJet = new Client($this->settings->apiKeyPublic, $this->settings->apiKeyPrivate);
     }
 
-    public function subscribe($emailAddress, $formListId, $contentProperties = null)
+    public function subscribe($emailAddress, $formListId, $contentProperties = null): array
     {
         $this->initMailjetApi();
 

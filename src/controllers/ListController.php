@@ -41,7 +41,7 @@ class ListController extends Controller
      *
      * @return null|\yii\web\Response
      */
-    public function actionSubscribe()
+    public function actionSubscribe(): null|\yii\web\Response
     {
         $this->requirePostRequest();
         $request = Craft::$app->getRequest();
